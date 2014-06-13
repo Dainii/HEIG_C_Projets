@@ -20,8 +20,8 @@ void createBitmapCanvas(unsigned long width, unsigned long height)
 	FILE * file = NULL;
 
 	//	Create Header
-	sBitmapFileHeader bfh = createBitmapFileHeader(((width * height) * sizeof(sRGB)) + sizeof(sBitmapFileHeader) + sizeof(sBitmapInfoHeader));
-	sBitmapInfoHeader bih = createBitmapInfoHeader(width, height);
+	sFileInfoHeader bfh = bitmapCreateFileInfoHeader(((width * height) * sizeof(sRGB)) + sizeof(sFileInfoHeader) + sizeof(sBitmapInfoHeader));
+	sBitmapInfoHeader bih = bitmapCreateBitmapInfoHeader(width, height);
 
 
 	//	Dynamically alocate "DATA" memory, containing only pixels, according to height and width
@@ -42,7 +42,7 @@ void createBitmapCanvas(unsigned long width, unsigned long height)
 		if(file != NULL)
 		{
 			//	Write header + data
-			fwrite(&bfh, sizeof(sBitmapFileHeader), 1, file);
+			fwrite(&bfh, sizeof(sFileInfoHeader), 1, file);
 			fwrite(&bih, sizeof(sBitmapInfoHeader), 1, file);
 			fwrite(data, (width*height)*sizeof(sRGB), 1, file);
 

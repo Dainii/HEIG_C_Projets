@@ -1,13 +1,13 @@
 #include "typedef.h"
 
-sBitmapFileHeader createBitmapFileHeader(unsigned int totalSize)
+sFileInfoHeader bitmapCreateFileInfoHeader(unsigned int totalSize)
 ///<SUMMARY>
 ///	This function is specifically created to return a sBitmapFileHeader specifically created for the project
 ///	It only need the the total size of the file to generate the header
 ///
 ///</SUMMARY
 {
-	sBitmapFileHeader bfh;
+	sFileInfoHeader bfh;
 
 	//	Type
 	bfh.bfType = 0x4D42;

@@ -69,8 +69,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="createBitmapCanvas.c" />
-    <ClCompile Include="createBitmapFileHeader.c" />
-    <ClCompile Include="createBitmapInfoHeader.c" />
+    <ClCompile Include="bitmapCreateFileInfoHeader.c" />
+    <ClCompile Include="bitmapCreateBitmapInfoHeader.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

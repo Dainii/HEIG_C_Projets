@@ -1,6 +1,6 @@
 #include "typedef.h"
 
-sBitmapInfoHeader createBitmapInfoHeader(unsigned long width, unsigned long height)
+sBitmapInfoHeader bitmapCreateBitmapInfoHeader(unsigned long width, unsigned long height)
 {
 	
 	sBitmapInfoHeader bih;
