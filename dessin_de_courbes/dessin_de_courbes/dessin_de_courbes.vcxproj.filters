@@ -53,14 +53,14 @@
     <ClCompile Include="bitmapCreateFileInfoHeader.c">
       <Filter>Fichiers de ressources\bitmap\create</Filter>
     </ClCompile>
-    <ClCompile Include="drawGrid.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
     <ClCompile Include="bitmapCreateData.c">
       <Filter>Fichiers de ressources\bitmap\create</Filter>
     </ClCompile>
     <ClCompile Include="bitmapFreeData.c">
       <Filter>Fichiers de ressources\bitmap\free</Filter>
+    </ClCompile>
+    <ClCompile Include="drawMargin.c">
+      <Filter>Fichiers de ressources\draw</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
