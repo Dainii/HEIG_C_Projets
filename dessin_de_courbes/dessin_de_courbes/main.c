@@ -5,7 +5,7 @@ Titre : Travail Personnel
 But : Dessin de courbes
 */
 
-// En-t�tes � inclure
+// En-tetes et inclure
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
