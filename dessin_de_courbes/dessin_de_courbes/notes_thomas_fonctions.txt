@@ -1,0 +1,33 @@
+bitmap
+	create
+		bitmapCreateFileInfoHeader
+		bitmapCreateBitmapInfoHeader
+		bitmapCreateData
+	read
+		bitmapReadFileInfoHeader
+		bitmapReadBitmapInfoHeader
+		bitmapReadData
+
+modification et écriture graphique
+	draw
+		drawGrid
+		drawAxe
+		drawGrade
+		drawZone[Ecrit un tableau 2D à un endroit précis.]
+		drawMargin
+
+Création de texte
+	generate
+		txtGenerateZone(string)
+	encode
+		txtEncodeChar(char)
+	insertInto
+		txtInsertCharIntoZone
+	create
+		txtCreateZone
+	
+Fichier
+	read
+		readFile
+	write
+		writeFile
