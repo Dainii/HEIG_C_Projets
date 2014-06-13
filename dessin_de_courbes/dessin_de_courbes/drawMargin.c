@@ -1,3 +1,22 @@
+/*
+Auteur: Etienne Ischer & Thomas Jolain
+Date :	16.06.2014
+Titre : Travail Personnel
+
+But:
+Fonction permettant de créer un cadre sur une zone de buffer.
+
+Exemple:
+drawMargin(unsigned int marge, sRGB** data,unsigned int width,unsigned int height);
+
+marge:	Largeur à partir du bord à laisser vide
+data:	Tableau de pointeur dynamiquement créer. Correspond aux données brut (sans header) de l'image
+width:	Largeur totale de l'image
+height:	Hauteur totale de l'image
+
+*/
+
+
 #include "typedef.h"
 
 void drawMargin (unsigned int margin, sRGB ** data, unsigned int width, unsigned int height)

@@ -1,11 +1,20 @@
+/*
+Auteur: Etienne Ischer & Thomas Jolain
+Date :	16.06.2014
+Titre : Travail Personnel
+
+But:
+Fonction permettant de créer le header d'information du fichier bitmap.
+
+Exemple:
+sFileInfoHeader var = bitmapCreateBitmapInfoHeader(unsigned int totalSize);
+
+
+*/
+
 #include "typedef.h"
 
 sFileInfoHeader bitmapCreateFileInfoHeader(unsigned int totalSize)
-///<SUMMARY>
-///	This function is specifically created to return a sBitmapFileHeader specifically created for the project
-///	It only need the the total size of the file to generate the header
-///
-///</SUMMARY
 {
 	sFileInfoHeader bfh;
 

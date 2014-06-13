@@ -34,3 +34,80 @@ Fichier
 		readFile
 	write
 		writeFile
+
+
+
+
+
+-----------------------------------------
+
+main.c de test
+
+-----------------------------------------
+
+/* 
+Auteur: Etienne Ischer & Thomas Jolain
+Date :
+Titre : Travail Personnel
+But : Dessin de courbes
+*/
+#define _CRT_SECURE_NO_WARNINGS 1
+
+// En-tetes et inclure
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include "headers.h"
+#include <time.h>
+#define PATH "test.bmp"
+// Programme principal
+int main(){
+	
+	//	Variables
+	
+	unsigned long width = 1024;
+	unsigned long height = 768;
+
+	FILE * file = NULL;
+	
+	srand(time(NULL));
+
+	sRGB** data = bitmapCreateData(width, height);
+	sBitmapInfoHeader sbih = bitmapCreateBitmapInfoHeader(width, height);
+	sFileInfoHeader sfih = bitmapCreateFileInfoHeader(((width * height) * sizeof(sRGB)) + sizeof(sFileInfoHeader)+sizeof(sBitmapInfoHeader));
+
+	for (unsigned y = 0; y < height; y++)
+	{
+		for (unsigned x = 0; x < width; x++)
+		{
+			sRGB tmp = { 0xff, 0xff, 0xff };
+			data[y][x] = tmp;
+		}
+	}
+	
+	drawMargin(100, data, width, height);
+
+	//	Open File
+	file = fopen(PATH, "wb");
+
+	//	Iff successfully opened
+	if (file != NULL)
+	{
+		//	Write header + data
+		fwrite(&sfih, sizeof(sFileInfoHeader), 1, file);
+		fwrite(&sbih, sizeof(sBitmapInfoHeader), 1, file);
+		for (unsigned y = 0; y < height; y++)
+		{
+			for (unsigned x = 0; x < width; x++)
+			{
+				fwrite(&data[y][x], sizeof(sRGB), 1, file);
+			}
+		}
+
+		//	Close File
+		fclose(file);
+	}
+
+	bitmapFreeData(data);
+	return 0;
+}
