@@ -1,5 +1,5 @@
 //	Since we're developping also for linux and windows, we have to deactivate _CRT_SECURE_NO_WARNINGS.
-//	Microsoft have developped their own fwrite, fread function that are not in the C99 standard
+//	Microsoft have developped their own fwrite, fread function that are not in the C99 standard, and therefore not portable
 #define _CRT_SECURE_NO_WARNINGS 1
 
 //	Define & include
