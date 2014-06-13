@@ -9,12 +9,7 @@ void drawMargin (unsigned int margin, sRGB ** data, unsigned int width, unsigned
 	{
 		for (unsigned x = 0; x < width; x++)
 		{
-			if (x == margin || y == margin)
-			{
-				data[y][x] = grey;
-			}
-
-			if (x == width-margin || y == height-margin)
+			if (((x == margin || x == width - margin) && y>margin && y < height - margin) || ((y == margin || y == height - margin) && x > margin && x < width - margin))
 			{
 				data[y][x] = grey;
 			}
