@@ -19,14 +19,17 @@ void createBitmapCanvas(unsigned long width, unsigned long height)
 	//	Create file handler
 	FILE * file = NULL;
 
+	//	White pixel
+	sRGB white = { 0xff, 0xff, 0xff };
+
 	//	Create Header
 	sFileInfoHeader bfh = bitmapCreateFileInfoHeader(((width * height) * sizeof(sRGB)) + sizeof(sFileInfoHeader) + sizeof(sBitmapInfoHeader));
 	sBitmapInfoHeader bih = bitmapCreateBitmapInfoHeader(width, height);
 
 
 	//	Dynamically alocate "DATA" memory, containing only pixels, according to height and width
-	unsigned char * data = NULL;
-	data = (unsigned char*)malloc(width*height*sizeof(sRGB));
+	sRGB * data = NULL;
+	data = (sRGB*)malloc(width*height*sizeof(sRGB));
 	
 
 	//	If data memory successfully alocated

@@ -1,4 +1,4 @@
-bitmap
+﻿bitmap
 	create
 		bitmapCreateFileInfoHeader
 		bitmapCreateBitmapInfoHeader
@@ -7,10 +7,13 @@ bitmap
 		bitmapReadFileInfoHeader
 		bitmapReadBitmapInfoHeader
 		bitmapReadData
+	free
+		bitmapFreeData
 
 modification et écriture graphique
 	draw
 		drawGrid
+		drawMargin
 		drawAxe
 		drawGrade
 		drawZone[Ecrit un tableau 2D à un endroit précis.]
