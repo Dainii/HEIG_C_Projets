@@ -8,33 +8,38 @@ But :
 This file contains every single struct and typedef necessary.
 */
 
+
+//Pragma pack, to prevent padding
+#pragma pack(push, 1)
 typedef struct
 {
-	char B;
-	char V;
-	char R;
-} sRGB;
+	unsigned char B;
+	unsigned char V;
+	unsigned char R;
+} sRGB;	
 
 typedef struct
 {
-	unsigned char bfType[2];
-	unsigned char bfSize[4];
-	unsigned char bfReserved1[2];
-	unsigned char bfReserved2[2];
-	unsigned char bfOffBits[4];
+	unsigned short bfType;
+	unsigned long bfSize;
+	unsigned short bfReserved1;
+	unsigned short bfReserved2;
+	unsigned long bfOffBits;
 } sBitmapFileHeader;
 
 typedef struct
 {
-	unsigned char bmpSize[4];
-	unsigned char bmpWidth[4];
-	unsigned char bmpHeight[4];
-	unsigned char bmpPlanes[2];
-	unsigned char bmpBitCount[2];
-	unsigned char bmpCompression[4];
-	unsigned char bmpSizeImage[4];
-	unsigned char bmpPixelPerMeterX[4];
-	unsigned char bmpPixelPerMeterY[4];
-	unsigned char bmpColorUsed[4];
-	unsigned char bmpImportantColor[4];
-} sBitmapDataHeader;
+	unsigned long bmpSize;
+	unsigned long bmpWidth;
+	unsigned long bmpHeight;
+	unsigned short bmpPlanes;
+	unsigned short bmpBitCount;
+	unsigned long bmpCompression;
+	unsigned long bmpSizeImage;
+	unsigned long bmpPixelPerMeterX;
+	unsigned long bmpPixelPerMeterY;
+	unsigned long bmpColorUsed;
+	unsigned long bmpImportantColor;
+} sBitmapInfoHeader;
+
+#pragma pack(pop)
