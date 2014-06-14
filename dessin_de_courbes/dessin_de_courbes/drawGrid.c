@@ -25,8 +25,8 @@ void drawGrid(double minX, double maxX, double stepX, double minY, double maxY, 
 	int yorigin = (int)floor((fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin)));
 
 	//	Find number of grade to draw
-	unsigned long numberOfYGrade = fabs(minY) + fabs(maxY);
-	unsigned long numberOfXGrade = fabs(minX) + fabs(maxX);
+	unsigned long numberOfYGrade = (fabs(minY) + fabs(maxY)) / stepX;
+	unsigned long numberOfXGrade = (fabs(minX) + fabs(maxX)) / stepY;
 
 	//	Find size in pixel between graduation
 	double xStepInPixel = ((width - (2 * margin)) / (fabs(minX) + fabs(maxX)));
@@ -36,11 +36,11 @@ void drawGrid(double minX, double maxX, double stepX, double minY, double maxY, 
 	for (int i = 0; i <= numberOfXGrade; i++)
 	{
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
-		if (i - fabs(minX) != 0)
+		if (i * stepX - fabs(minX) != 0)
 		{
 			for (unsigned long y = margin; y < (height - margin); y++)
 			{
-				data[y][(unsigned long)round(i * xStepInPixel) + margin] = _GREY;
+				data[y][(unsigned long)round(i * xStepInPixel * stepX) + margin] = _GREY;
 			}
 		}
 	}
@@ -49,11 +49,11 @@ void drawGrid(double minX, double maxX, double stepX, double minY, double maxY, 
 	for (int i = 0; i <= numberOfYGrade; i++)
 	{
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
-		if (i - fabs(minY) != 0)
+		if (i * stepY - fabs(minY) != 0)
 		{
 			for (unsigned long x = margin; x < (width - margin); x++)
 			{
-				data[(unsigned long)round(i * yStepInPixel) + margin][x] = _GREY;
+				data[(unsigned long)round(i * yStepInPixel * stepY) + margin][x] = _GREY;
 			}
 		}
 	}

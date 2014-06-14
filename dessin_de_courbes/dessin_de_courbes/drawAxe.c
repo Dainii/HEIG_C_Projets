@@ -25,14 +25,14 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	int yorigin = (int)floor((fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin)));
 
 	//	Find number of grade to draw
-	unsigned long numberOfYGrade = fabs(minY) + fabs(maxY);
-	unsigned long numberOfXGrade = fabs(minX) + fabs(maxX);
+	unsigned long numberOfYGrade = (fabs(minY) + fabs(maxY)) / stepX;
+	unsigned long numberOfXGrade = (fabs(minX) + fabs(maxX)) / stepX;
 
 	//	Find size in pixel between graduation
 	double xStepInPixel = ((width - (2 * margin)) / (fabs(minX) + fabs(maxX)));
 	double yStepInPixel = ((height - (2 * margin)) / (fabs(minY) + fabs(maxY)));
 
-	//	Draw Lines
+	//	Draw Axe
 	for (unsigned long y = 0; y < height; y++)
 	{
 		for (unsigned long x = 0; x < width; x++)
@@ -50,9 +50,9 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	for (int i = 0; i <= numberOfXGrade; i++)
 	{
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
-		if (i - fabs(minX) != 0)
+		if (i * stepX - fabs(minX) != 0)
 		{
-			drawVerticalLine((unsigned long)round(i * xStepInPixel) + margin, yorigin + margin, 5, data);
+			drawVerticalLine((unsigned long)round(i * xStepInPixel * stepX) + margin, yorigin + margin, 5, data);
 		}
 	}
 
@@ -60,49 +60,12 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	for (int i = 0; i <= numberOfYGrade; i++)
 	{
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
-		if (i - fabs(minY) != 0)
+		if (i * stepY - fabs(minY) != 0)
 		{
-			drawHorizontalLine(xorigin + margin, (unsigned long)round(i * yStepInPixel) + margin, 5, data);
+			drawHorizontalLine(xorigin + margin, (unsigned long)round(i * yStepInPixel * stepY) + margin, 5, data);
 		}
 	}
 	
-	/*//		Graduation x+
-	count = 0;
-	double xStepInPixel = ((width - (2 * margin)) / (fabs(minX) + fabs(maxX)));
-	while ((count * stepX * xStepInPixel) + xorigin < (width - (2 * margin) - 1))
-	{
-		count++;
-		drawVerticalLine((unsigned int)ceil(((count * stepX * xStepInPixel) + xorigin)) + margin, yorigin + margin, 5, data);
-	}
-
-
-	//		Graduation y+
-	count = 0;
-	double yStepInPixel = ((height - (2 * margin)) / (fabs(minY) + fabs(maxY)));
-	while ((int)round((count * stepY * yStepInPixel)) + yorigin < (height - (2 * margin) - 1))
-	{
-		count++;
-		drawHorizontalLine(xorigin + margin, (unsigned int)ceil(((count * stepY * yStepInPixel) + yorigin)) + margin, 5, data);
-	}
-
-	//		Graduation x-
-	count = 0;
-	while ((count * stepX * xStepInPixel) + xorigin > margin)
-	{
-		count--;
-		drawVerticalLine((unsigned int)ceil(((count * stepX * xStepInPixel) + xorigin)) + margin, yorigin + margin, 5, data);
-	}
-
-
-	//		Graduation y-
-	count = 0;
-	while ((int)round((count * stepY * yStepInPixel)) + yorigin > margin)
-	{
-		count--;
-		drawHorizontalLine(xorigin + margin, (unsigned int)ceil(((count * stepY * yStepInPixel) + yorigin)) + margin, 5, data);
-	}*/
-
-
 	//	Draw Axe Origin Point
 
 	for (int crossSize = -5; crossSize <= 5; crossSize++)

@@ -15,18 +15,26 @@ But : Dessin de courbes
 int main(){
 
 	//	Variables
+
+	//	Size of image
 	unsigned long width = 1024;
 	unsigned long height = 768;
 
-	double minX = -50;
-	double maxX = 10;
+	//	Define minimum and maximum Value
+	double minX = -15;
+	double maxX = 5;
+	double minY = -20;
+	double maxY = +20;
 
-	double minY = -70;
-	double maxY = 20;
+	//	Define graduation precision for the drawAxe function only
+	double stepX = 0.5;
+	double stepY = 0.5;
 
-	double stepX = 1;
-	double stepY = 1;
+	//	Define Alternate graduation precision for the drawGrid function only
+	double gridStepX = 0.25;
+	double gridStepY = 0.25;
 
+	//	Define Margin
 	unsigned int margin = 100;
 
 	srand(time(NULL));
@@ -47,7 +55,7 @@ int main(){
 	}
 
 	drawMargin(margin, data, width, height);
-	drawGrid(minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
+	drawGrid(minX, maxX, gridStepX, minY, maxY, gridStepY, data, width, height, margin);
 	drawAxe(minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
 
 	fileWrite(width, height, data);
