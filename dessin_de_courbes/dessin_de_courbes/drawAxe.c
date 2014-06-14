@@ -20,12 +20,6 @@ height:	Hauteur totale de l'image
 
 void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin)
 {
-	/*unsigned int xorigin = (unsigned int)floor(((minX + maxX) * ((fabs(minX) + fabs(maxX)) / (width - (2 * margin)))) + (width - (2 * margin)));
-	unsigned int yorigin = (unsigned int)floor(((minY + maxY) * ((fabs(minY) + fabs(maxY)) / (height - (2 * margin)))) + (height - (2 * margin)));*/
-
-	//	This variable will be used to calculate exact position of graduation
-	int count = 0;
-
 	//	Find Origin coordinate
 	int xorigin = (int)floor((fabs(minX) / (fabs(minX) + fabs(maxX))) * (width - (2*margin)));
 	int yorigin = (int)floor((fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin)));
@@ -62,7 +56,7 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 		}
 	}
 
-	//	Graduate X
+	//	Graduate Y
 	for (int i = 0; i <= numberOfYGrade; i++)
 	{
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin

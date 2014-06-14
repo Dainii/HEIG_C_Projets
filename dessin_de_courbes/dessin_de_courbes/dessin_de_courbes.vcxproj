@@ -74,6 +74,7 @@
     <ClCompile Include="bitmapCreateFileInfoHeader.c" />
     <ClCompile Include="bitmapCreateBitmapInfoHeader.c" />
     <ClCompile Include="drawAxe.c" />
+    <ClCompile Include="drawGrid.c" />
     <ClCompile Include="drawHorizontalLine.c" />
     <ClCompile Include="drawMargin.c" />
     <ClCompile Include="drawPoint.c" />

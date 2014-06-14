@@ -80,5 +80,8 @@
     <ClCompile Include="drawPoint.c">
       <Filter>Fichiers de ressources\draw</Filter>
     </ClCompile>
+    <ClCompile Include="drawGrid.c">
+      <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

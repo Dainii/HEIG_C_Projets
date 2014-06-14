@@ -47,6 +47,7 @@ int main(){
 	}
 
 	drawMargin(margin, data, width, height);
+	drawGrid(minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
 	drawAxe(minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
 
 	fileWrite(width, height, data);

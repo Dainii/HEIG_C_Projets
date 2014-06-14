@@ -19,7 +19,6 @@ height:	Hauteur totale de l'image
 
 void drawMargin(unsigned int margin, sRGB ** data, unsigned long width, unsigned long height)
 {
-	//	Y coordinate manipulation. Bitmap is read from last to first line
 	for (unsigned long y = 0; y < height; y++)
 	{
 		for (unsigned long x = 0; x < width; x++)
