@@ -4,6 +4,6 @@ void drawVerticalLine(unsigned long xCoordinate, unsigned long yCoordinate, int 
 {
 	for (int line = -size; line <= size; line++)
 	{
-		data[yCoordinate][xCoordinate + line] = _BLUE;
+		data[yCoordinate + line][xCoordinate] = _BLACK;
 	}
 }

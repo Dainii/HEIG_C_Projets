@@ -20,6 +20,6 @@ void drawHorizontalLine(unsigned long xCoordinate, unsigned long yCoordinate, in
 {
 	for (int line = -size; line <= size; line++)
 	{
-		data[yCoordinate + line][xCoordinate] = _RED;
+		data[yCoordinate][xCoordinate + line] = _BLACK;
 	}
 }
