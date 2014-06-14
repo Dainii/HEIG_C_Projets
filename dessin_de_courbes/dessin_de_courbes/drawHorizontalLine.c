@@ -16,7 +16,7 @@ exemple:
 
 #include "headers.h"
 
-void drawHorizontalLine(unsigned int xCoordinate, unsigned int yCoordinate, int size, sRGB ** data)
+void drawHorizontalLine(unsigned long xCoordinate, unsigned long yCoordinate, int size, sRGB ** data)
 {
 	for (int line = -size; line <= size; line++)
 	{

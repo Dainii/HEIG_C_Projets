@@ -1,6 +1,6 @@
 #include "headers.h"
 
-void drawPoint(unsigned int xCoordinate, unsigned int yCoordinate, int size, sRGB ** data, sRGB color)
+void drawPoint(unsigned long xCoordinate, unsigned long yCoordinate, int size, sRGB ** data, sRGB color)
 {
 	for (int i = -size; i <= size; i++)
 	{
