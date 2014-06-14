@@ -73,7 +73,9 @@
     <ClCompile Include="createBitmapCanvas.c" />
     <ClCompile Include="bitmapCreateFileInfoHeader.c" />
     <ClCompile Include="bitmapCreateBitmapInfoHeader.c" />
+    <ClCompile Include="drawAxe.c" />
     <ClCompile Include="drawMargin.c" />
+    <ClCompile Include="fileWrite.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -3,10 +3,6 @@
 		bitmapCreateFileInfoHeader
 		bitmapCreateBitmapInfoHeader
 		bitmapCreateData
-	read
-		bitmapReadFileInfoHeader
-		bitmapReadBitmapInfoHeader
-		bitmapReadData
 	free
 		bitmapFreeData
 
@@ -30,13 +26,8 @@ Création de texte
 		txtCreateZone
 	
 Fichier
-	read
-		readFile
 	write
-		writeFile
-
-
-
+		fileWrite
 
 
 -----------------------------------------

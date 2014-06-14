@@ -31,6 +31,9 @@
     <Filter Include="Fichiers de ressources\bitmap\free">
       <UniqueIdentifier>{daf0488e-7517-4e68-be82-512617de4e96}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers de ressources\file">
+      <UniqueIdentifier>{beb0e0ab-09f3-4070-ad82-72e2e9ddc330}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="typedef.h">
@@ -61,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="drawMargin.c">
       <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="drawAxe.c">
+      <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="fileWrite.c">
+      <Filter>Fichiers de ressources\file</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
