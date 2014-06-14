@@ -1,3 +1,4 @@
+/*
 //	Since we're developping also for linux and windows, we have to deactivate _CRT_SECURE_NO_WARNINGS.
 //	Microsoft have developped their own fwrite, fread function that are not in the C99 standard, and therefore not portable
 #define _CRT_SECURE_NO_WARNINGS 1
@@ -35,7 +36,7 @@ void createBitmapCanvas(unsigned long width, unsigned long height)
 	//	If data memory successfully alocated
 	if(data != NULL)
 	{	
-		/*//	Write every pixel with "0xff" to create a white image*/
+		//	Write every pixel with "0xff" to create a white image
 		memset(data, 0xff, width*height*sizeof(sRGB));
 	
 		//	Open File
@@ -63,4 +64,4 @@ void createBitmapCanvas(unsigned long width, unsigned long height)
 	
 	free(data);
 	return;
-}
+}*/

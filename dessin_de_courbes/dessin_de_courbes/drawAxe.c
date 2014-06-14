@@ -7,7 +7,7 @@ But:
 Fonction permettant de dessiner les axes
 
 Exemple:
-drawAxe(unsigned long minX, unsigned long maxX, double stepX, unsigned long minY, unsigned long maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin);
+drawAxe(minX, maxX, stepX, minY, maxY, stepY, sRGB ** data, long width, long height, int margin)
 
 marge:	Largeur à partir du bord à laisser vide
 data:	Tableau de pointeur dynamiquement créer. Correspond aux données brut (sans header) de l'image
@@ -15,7 +15,7 @@ width:	Largeur totale de l'image
 height:	Hauteur totale de l'image
 
 */
-#include "typedef.h"
+#include "headers.h"
 #include "math.h"
 
 void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin)
@@ -23,12 +23,32 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	/*unsigned int xorigin = (unsigned int)floor(((minX + maxX) * ((fabs(minX) + fabs(maxX)) / (width - (2 * margin)))) + (width - (2 * margin)));
 	unsigned int yorigin = (unsigned int)floor(((minY + maxY) * ((fabs(minY) + fabs(maxY)) / (height - (2 * margin)))) + (height - (2 * margin)));*/
 
+
+	//	Find Origin coordinate
 	int xorigin = (fabs(minX) / (fabs(minX) + fabs(maxX))) * (width - (2*margin));
 	int yorigin = (fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin));
 
+	data[yorigin + margin][xorigin + margin] = _RED;
 
-	sRGB red = { 0xff, 0x00, 0x00 };
-	data[yorigin][xorigin] = red;
+	//	DrawLines
+	for (unsigned long y = 0; y < height; y++)
+	{
+		for (unsigned long x = 0; x < width; x++)
+		{
+			//if (((x == margin || x == width - margin) && y>margin && y < height - margin) || ((y == margin || y == height - margin) && x > margin && x < width - margin))
+			if ((x == (xorigin + margin) && y >= margin && y <= height - margin) || (y == (yorigin + margin) && x >= margin && x <= width - margin))
+			{
+				data[y][x] = _BLACK;
+			}
+		}
+	}
+
+	//	Draw Axe Origin Point
+	for (int crossSize = -5; crossSize <= 5; crossSize++)
+	{
+		data[yorigin + margin + crossSize][xorigin + margin] = _RED;
+		data[yorigin + margin][xorigin + margin + crossSize] = _RED;
+	}
 
 	return;
 }

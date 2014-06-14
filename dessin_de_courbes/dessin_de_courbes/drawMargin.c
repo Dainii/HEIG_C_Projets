@@ -15,14 +15,10 @@ width:	Largeur totale de l'image
 height:	Hauteur totale de l'image
 
 */
-
-
 #include "typedef.h"
 
 void drawMargin(unsigned int margin, sRGB ** data, unsigned long width, unsigned long height)
 {
-	sRGB grey = { 0xCD, 0xCD, 0xCD };
-
 	//	Y coordinate manipulation. Bitmap is read from last to first line
 	for (unsigned long y = 0; y < height; y++)
 	{
@@ -30,7 +26,7 @@ void drawMargin(unsigned int margin, sRGB ** data, unsigned long width, unsigned
 		{
 			if (((x == margin || x == width - margin) && y>margin && y < height - margin) || ((y == margin || y == height - margin) && x > margin && x < width - margin))
 			{
-				data[y][x] = grey;
+				data[y][x] = _GREY;
 			}
 		}
 	}

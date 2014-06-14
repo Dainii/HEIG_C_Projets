@@ -30,7 +30,11 @@ void fileWrite(unsigned long width, unsigned long height, sRGB ** data)
 		{
 			for (unsigned x = 0; x < width; x++)
 			{
-				fwrite(&data[(height - 1) - y][x], sizeof(sRGB), 1, file);
+				//Write Data Backward from axe Y
+				//fwrite(&data[(height - 1) - y][x], sizeof(sRGB), 1, file);
+				
+				//Write Data
+				fwrite(&data[y][x], sizeof(sRGB), 1, file);
 			}
 		}
 

@@ -11,11 +11,14 @@ This file contains every single struct and typedef necessary.
 
 //Pragma pack, to prevent padding
 #pragma pack(push, 1)
+
+
+//	Global Structure Definition
 typedef struct
 {
-	unsigned char B;
-	unsigned char V;
-	unsigned char R;
+	unsigned char Blue;
+	unsigned char Green;
+	unsigned char Red;
 } sRGB;	
 
 typedef struct
@@ -43,3 +46,21 @@ typedef struct
 } sBitmapInfoHeader;
 
 #pragma pack(pop)
+
+
+//	Global Color definitions
+
+//Primary
+const static sRGB _RED = { 0x00, 0x00, 0xff };
+const static sRGB _GREEN = { 0x00, 0xff, 0x00 };
+const static sRGB _BLUE = { 0xff, 0x00, 0x00 };
+
+//Secondary
+const static sRGB _YELLOW = { 0xff, 0x00, 0xff };
+const static sRGB _PURPLE = { 0x00, 0xff, 0xff };
+const static sRGB _CYAN = { 0xff, 0xff, 0x00 };
+
+//Black & WHITE
+const static sRGB _BLACK = { 0x00, 0x00, 0x00 };
+const static sRGB _GREY = { 0xCD, 0xCD, 0xCD };
+const static sRGB _WHITE = { 0xff, 0xff, 0xff };
