@@ -28,10 +28,6 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	int xorigin = (fabs(minX) / (fabs(minX) + fabs(maxX))) * (width - (2*margin));
 	int yorigin = (fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin));
 
-	//	developpement test variables
-
-	data[yorigin + margin][xorigin + margin] = _RED;
-
 	//	DrawLines
 	for (unsigned long y = 0; y < height; y++)
 	{
