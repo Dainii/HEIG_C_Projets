@@ -71,5 +71,11 @@
     <ClCompile Include="fileWrite.c">
       <Filter>Fichiers de ressources\file</Filter>
     </ClCompile>
+    <ClCompile Include="drawHorizontalLine.c">
+      <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="drawVerticalLine.c">
+      <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -28,6 +28,8 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	int xorigin = (fabs(minX) / (fabs(minX) + fabs(maxX))) * (width - (2*margin));
 	int yorigin = (fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin));
 
+	//	developpement test variables
+
 	data[yorigin + margin][xorigin + margin] = _RED;
 
 	//	DrawLines
@@ -38,6 +40,15 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 			//if (((x == margin || x == width - margin) && y>margin && y < height - margin) || ((y == margin || y == height - margin) && x > margin && x < width - margin))
 			if ((x == (xorigin + margin) && y >= margin && y <= height - margin) || (y == (yorigin + margin) && x >= margin && x <= width - margin))
 			{
+				if (x % 10 == 0)
+				{
+					drawHorizontalLine(x, y, 5, data);
+				}
+
+				if (y % 10 == 0)
+				{
+					drawVerticalLine(x, y, 5, data);
+				}
 				data[y][x] = _BLACK;
 			}
 		}
