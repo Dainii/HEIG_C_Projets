@@ -76,6 +76,7 @@
     <ClCompile Include="drawAxe.c" />
     <ClCompile Include="drawHorizontalLine.c" />
     <ClCompile Include="drawMargin.c" />
+    <ClCompile Include="drawPoint.c" />
     <ClCompile Include="drawVerticalLine.c" />
     <ClCompile Include="fileWrite.c" />
     <ClCompile Include="main.c" />

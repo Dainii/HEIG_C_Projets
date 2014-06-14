@@ -1,5 +1,4 @@
 #include "headers.h"
-#include "math.h"
 
 void drawVerticalLine(unsigned int xCoordinate, unsigned int yCoordinate, int size, sRGB ** data)
 {

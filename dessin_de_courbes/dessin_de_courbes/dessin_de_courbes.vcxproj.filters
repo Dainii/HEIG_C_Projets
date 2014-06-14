@@ -77,5 +77,8 @@
     <ClCompile Include="drawVerticalLine.c">
       <Filter>Fichiers de ressources\draw</Filter>
     </ClCompile>
+    <ClCompile Include="drawPoint.c">
+      <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -15,7 +15,6 @@ exemple:
 */
 
 #include "headers.h"
-#include "math.h"
 
 void drawHorizontalLine(unsigned int xCoordinate, unsigned int yCoordinate, int size, sRGB ** data)
 {
