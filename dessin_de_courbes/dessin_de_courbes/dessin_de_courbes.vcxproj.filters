@@ -34,6 +34,9 @@
     <Filter Include="Fichiers de ressources\file">
       <UniqueIdentifier>{beb0e0ab-09f3-4070-ad82-72e2e9ddc330}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers de ressources\error">
+      <UniqueIdentifier>{9e6ed3d0-fc4e-499a-8c4f-8347be497eea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="typedef.h">
@@ -82,6 +85,12 @@
     </ClCompile>
     <ClCompile Include="drawGrid.c">
       <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="errorThrow.c">
+      <Filter>Fichiers de ressources\error</Filter>
+    </ClCompile>
+    <ClCompile Include="errrorInputCheck.c">
+      <Filter>Fichiers de ressources\error</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -17,3 +17,7 @@ void drawGrid(double minX, double maxX, double stepX, double minY, double maxY, 
 
 //	File Functions
 void fileWrite(unsigned long width, unsigned long height, sRGB ** data);
+
+//	Error function
+void errorThrow(int errNo);
+int errorInputCheck(double minX, double maxX, double stepX, double alternateStepX, double minY, double maxY, double stepY, double alternateStepY, unsigned long width, unsigned long height, unsigned int margin);

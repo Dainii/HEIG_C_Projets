@@ -79,6 +79,8 @@
     <ClCompile Include="drawMargin.c" />
     <ClCompile Include="drawPoint.c" />
     <ClCompile Include="drawVerticalLine.c" />
+    <ClCompile Include="errorThrow.c" />
+    <ClCompile Include="errrorInputCheck.c" />
     <ClCompile Include="fileWrite.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>

@@ -14,21 +14,21 @@ But : Dessin de courbes
 // Programme principal
 int main(){
 
-	//	Variables
+	//	DEFAULT VALUES
 
 	//	Size of image
-	unsigned long width = 1024;
-	unsigned long height = 768;
+	unsigned long width = 800;
+	unsigned long height = 600;
 
 	//	Define minimum and maximum Value
-	double minX = -15;
-	double maxX = 5;
-	double minY = -20;
-	double maxY = +20;
+	double minX = -5;
+	double maxX = 10;
+	double minY = -5;
+	double maxY = +5;
 
 	//	Define graduation precision for the drawAxe function only
-	double stepX = 0.5;
-	double stepY = 0.5;
+	double stepX = 1;
+	double stepY = 1;
 
 	//	Define Alternate graduation precision for the drawGrid function only
 	double gridStepX = 0.25;
@@ -37,8 +37,18 @@ int main(){
 	//	Define Margin
 	unsigned int margin = 100;
 
-	srand(time(NULL));
+	//	DATA INPUT
 
+
+	//	CHECK INPUT
+	int errorNbr = errorInputCheck(minX, maxX, stepX, gridStepX, minY, maxY, stepY, gridStepY, width, height, margin);
+	if (errorNbr != 0)
+	{
+		errorThrow(errorNbr);
+		return errorNbr;
+	}
+
+	//	CREATE MEMORY ZONE
 	sRGB** data = bitmapCreateData(width, height);
 
 	//	Initialisation des DATA en blanc
