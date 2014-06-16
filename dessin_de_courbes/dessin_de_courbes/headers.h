@@ -12,7 +12,7 @@ void drawMargin(unsigned int margin, sRGB ** data, unsigned int width, unsigned 
 void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin);
 void drawHorizontalLine(unsigned long xCoordinate, unsigned long yCoordinate, int size, sRGB ** data);
 void drawVerticalLine(unsigned long xCoordinate, unsigned long yCoordinate, int size, sRGB ** data);
-void drawPoint(unsigned long xCoordinate, unsigned long yCoordinate, int size, sRGB ** data, sRGB color);
+void drawPoint(double x_value, double y_value, double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin);
 void drawGrid(double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin);
 
 //	File Functions

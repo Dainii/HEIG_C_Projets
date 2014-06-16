@@ -1,10 +1,17 @@
 #include "headers.h"
+#include "math.h"
 
-void drawPoint(unsigned long xCoordinate, unsigned long yCoordinate, int size, sRGB ** data, sRGB color)
+void drawPoint(double x_value, double y_value, double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin)
 {
-	for (int i = -size; i <= size; i++)
+	if (y_value > minY && y_value < maxY)
 	{
-		data[yCoordinate + i][xCoordinate] = color;
-		data[yCoordinate][xCoordinate + i] = color;
+		//	Multiply this proportion with the number of pixel
+		unsigned int xCoordinate = (unsigned int)ceil((((x_value + fabs(minX)) * (width - (2 * margin))) / (fabs(minX) + fabs(maxX)))) + margin;
+		unsigned int yCoordinate = (unsigned int)ceil((((y_value + fabs(minY)) * (height - (2 * margin))) / (fabs(minY) + fabs(maxY)))) + margin;
+
+		data[yCoordinate][xCoordinate] = _RED;
+
 	}
+
+	return;
 }
