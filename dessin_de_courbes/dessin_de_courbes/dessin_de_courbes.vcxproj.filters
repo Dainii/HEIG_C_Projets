@@ -92,5 +92,22 @@
     <ClCompile Include="errrorInputCheck.c">
       <Filter>Fichiers de ressources\error</Filter>
     </ClCompile>
+    <ClCompile Include="drawChar.c">
+      <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="writeTitle.c">
+      <Filter>Fichiers de ressources\txt</Filter>
+    </ClCompile>
+    <ClCompile Include="writeLabels.c">
+      <Filter>Fichiers de ressources\txt</Filter>
+    </ClCompile>
+    <ClCompile Include="drawString.c">
+      <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="character.xbm">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </None>
   </ItemGroup>
 </Project>

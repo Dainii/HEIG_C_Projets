@@ -17,6 +17,9 @@ height:	Hauteur totale de l'image
 */
 #include "headers.h"
 #include "math.h"
+#include "character.xbm"
+#include <string.h>
+#define GRAD_SIZE 10
 
 void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin)
 {
@@ -25,8 +28,8 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	int yorigin = (int)floor((fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin)));
 
 	//	Find number of grade to draw
-	unsigned long numberOfYGrade = (fabs(minY) + fabs(maxY)) / stepX;
-	unsigned long numberOfXGrade = (fabs(minX) + fabs(maxX)) / stepX;
+	unsigned long numberOfYGrade = (unsigned long)round((fabs(minY) + fabs(maxY)) / stepX);
+	unsigned long numberOfXGrade = (unsigned long)round((fabs(minX) + fabs(maxX)) / stepX);
 
 	//	Find size in pixel between graduation
 	double xStepInPixel = ((width - (2 * margin)) / (fabs(minX) + fabs(maxX)));
@@ -47,22 +50,32 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 
 
 	//	Graduate X
-	for (int i = 0; i <= numberOfXGrade; i++)
+	for (unsigned int i = 0; i <= numberOfXGrade; i++)
 	{
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
 		if (i * stepX - fabs(minX) != 0)
 		{
-			drawVerticalLine((unsigned long)round(i * xStepInPixel * stepX) + margin, yorigin + margin, 5, data);
+			//	Write Graduation
+			int x_coordinate = (unsigned long)round(i * xStepInPixel * stepX) + margin;
+			char buffer[10];
+			sprintf(buffer, "%.2lf", minX + i * stepX);
+			drawString(x_coordinate - (CHAR_WIDTH * strlen(buffer) / 2), yorigin + CHAR_HEIGHT + margin, data, buffer, strlen(buffer), width, height);
+			drawVerticalLine(x_coordinate, yorigin + margin, GRAD_SIZE, data);
 		}
 	}
 
 	//	Graduate Y
-	for (int i = 0; i <= numberOfYGrade; i++)
+	for (unsigned int i = 0; i <= numberOfYGrade; i++)
 	{
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
 		if (i * stepY - fabs(minY) != 0)
-		{
-			drawHorizontalLine(xorigin + margin, (unsigned long)round(i * yStepInPixel * stepY) + margin, 5, data);
+		{	
+			//	Write Graduation
+			int y_coordinate = (unsigned long)round(i * yStepInPixel * stepY) + margin;
+			char buffer[10];
+			sprintf(buffer, "%.2lf", minX + i * stepX);
+			drawString(xorigin + margin - (strlen(buffer) * CHAR_WIDTH), y_coordinate - CHAR_HEIGHT, data, buffer, strlen(buffer), width, height);
+			drawHorizontalLine(xorigin + margin, y_coordinate, GRAD_SIZE, data);
 		}
 	}
 	

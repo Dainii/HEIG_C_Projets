@@ -10,7 +10,7 @@ But : Dessin de courbes
 #include <math.h>
 #include <stdlib.h>
 #include "headers.h"
-#include <time.h>
+#include <string.h>
 // Programme principal
 int main(){
 
@@ -35,10 +35,17 @@ int main(){
 	double gridStepY = 0.5;
 
 	//	Define Margin
-	unsigned int margin = 100;
+	unsigned long margin = 100;
 
 	//	Define precision
 	double stepPrecision = 0.0001;
+
+	//	Define Graphics title
+	char title[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+	//	Define x - y Label
+	char x_label[10] = "poney x";
+	char y_label[10] = "poney y";
 
 	//	DATA INPUT
 
@@ -77,6 +84,8 @@ int main(){
 		drawPoint(i, tan(i), minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
 	}
 
+	writeTitle(width, height, margin, title, strlen(title), data);
+	writeLabel(width, height, minX, maxX, minY, maxY, margin, x_label, strlen(x_label), y_label, strlen(y_label), data);
 
 	fileWrite(width, height, data);
 

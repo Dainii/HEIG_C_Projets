@@ -74,15 +74,22 @@
     <ClCompile Include="bitmapCreateFileInfoHeader.c" />
     <ClCompile Include="bitmapCreateBitmapInfoHeader.c" />
     <ClCompile Include="drawAxe.c" />
+    <ClCompile Include="drawChar.c" />
     <ClCompile Include="drawGrid.c" />
     <ClCompile Include="drawHorizontalLine.c" />
     <ClCompile Include="drawMargin.c" />
     <ClCompile Include="drawPoint.c" />
+    <ClCompile Include="drawString.c" />
     <ClCompile Include="drawVerticalLine.c" />
     <ClCompile Include="errorThrow.c" />
     <ClCompile Include="errrorInputCheck.c" />
     <ClCompile Include="fileWrite.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="writeLabels.c" />
+    <ClCompile Include="writeTitle.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="character.xbm" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
