@@ -73,7 +73,9 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 			//	Write Graduation
 			int y_coordinate = (unsigned long)round(i * yStepInPixel * stepY) + margin;
 			char buffer[10];
-			sprintf(buffer, "%.2lf", minX + i * stepX);
+
+			//Inwarding result of (minY + i * stepY) because of bitmap structure
+			sprintf(buffer, "%.2lf", -(minY + i * stepY));
 			drawString(xorigin + margin - (strlen(buffer) * CHAR_WIDTH), y_coordinate - CHAR_HEIGHT, data, buffer, strlen(buffer), width, height);
 			drawHorizontalLine(xorigin + margin, y_coordinate, GRAD_SIZE, data);
 		}

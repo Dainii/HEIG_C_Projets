@@ -21,10 +21,10 @@ int main(){
 	unsigned long height = 720;
 
 	//	Define minimum and maximum Value
-	double minX = -10;
+	double minX = -2;
 	double maxX = 10;
 	double minY = -10;
-	double maxY = +10;
+	double maxY = +20;
 
 	//	Define graduation precision for the drawAxe function only
 	double stepX = 2;
@@ -81,7 +81,9 @@ int main(){
 
 	for (double i = minX; i <= maxX; i += stepPrecision)
 	{
-		drawPoint(i, tan(i), minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
+		int y = i*sin(i);
+
+		drawPoint(i, i*sin(i), minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
 	}
 
 	writeTitle(width, height, margin, title, strlen(title), data);
