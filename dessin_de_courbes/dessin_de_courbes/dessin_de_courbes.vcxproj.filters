@@ -19,9 +19,6 @@
     <Filter Include="Fichiers de ressources\bitmap\create">
       <UniqueIdentifier>{646aa03e-9802-4cef-8c81-287154014bf0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fichiers de ressources\bitmap\read">
-      <UniqueIdentifier>{c31210cf-178b-4028-a9b3-7bc886be7bce}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers de ressources\draw">
       <UniqueIdentifier>{98741ffa-ac9e-4877-90d4-12ba112d8403}</UniqueIdentifier>
     </Filter>
@@ -42,15 +39,60 @@
     <ClInclude Include="typedef.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="headers.h">
+    <ClInclude Include="drawAxe.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="errrorInputCheck.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="errorThrow.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="fileWrite.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="writeLabels.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="writeTitle.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="drawString.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="drawChar.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="drawGrid.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="drawPoint.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="drawVerticalLine.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="drawHorizontalLine.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="drawMargin.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="bitmapCreateFileInfoHeader.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="bitmapCreateBitmapInfoHeader.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="bitmapFreeData.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="bitmapCreateData.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
-      <Filter>Fichiers de ressources</Filter>
-    </ClCompile>
-    <ClCompile Include="createBitmapCanvas.c">
       <Filter>Fichiers de ressources</Filter>
     </ClCompile>
     <ClCompile Include="bitmapCreateBitmapInfoHeader.c">

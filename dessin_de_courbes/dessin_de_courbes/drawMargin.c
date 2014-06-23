@@ -15,7 +15,10 @@ width:	Largeur totale de l'image
 height:	Hauteur totale de l'image
 
 */
+
+#ifndef TYPEDEF_H
 #include "typedef.h"
+#endif
 
 void drawMargin(unsigned int margin, sRGB ** data, unsigned long width, unsigned long height)
 {

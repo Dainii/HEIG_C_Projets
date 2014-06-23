@@ -12,7 +12,10 @@ sFileInfoHeader var = bitmapCreateBitmapInfoHeader(unsigned int totalSize);
 
 */
 
+
+#ifndef TYPEDEF_H
 #include "typedef.h"
+#endif
 
 sFileInfoHeader bitmapCreateFileInfoHeader(unsigned int totalSize)
 {

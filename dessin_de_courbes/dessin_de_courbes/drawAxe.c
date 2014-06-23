@@ -15,9 +15,29 @@ width:	Largeur totale de l'image
 height:	Hauteur totale de l'image
 
 */
-#include "headers.h"
-#include "math.h"
+
+
+#ifndef TYPEDEF_H
+#include "typedef.h"
+#endif
+
+#ifndef CHARACTER_H
 #include "character.xbm"
+#endif
+
+#ifndef DRAWVERTICALLINE_H
+#include "drawVerticalLine.h"
+#endif
+
+#ifndef DRAWHORIZONTALLINE_H
+#include "drawHorizontalLine.h"
+#endif
+
+#ifndef DRAWSTRING_H
+#include "drawString.h"
+#endif
+
+#include "math.h"
 #include <string.h>
 #define GRAD_SIZE 10
 

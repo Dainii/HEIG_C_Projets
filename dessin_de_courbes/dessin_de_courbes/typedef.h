@@ -8,6 +8,7 @@ But :
 This file contains every single struct and typedef necessary.
 */
 
+#define TYPEDEF_H
 
 //Pragma pack, to prevent padding
 #pragma pack(push, 1)

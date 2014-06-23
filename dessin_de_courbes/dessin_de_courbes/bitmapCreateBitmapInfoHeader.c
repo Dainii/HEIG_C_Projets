@@ -14,7 +14,9 @@ height:	Hauteur totale de l'image
 
 */
 
+#ifndef TYPEDEF_H
 #include "typedef.h"
+#endif
 
 sBitmapInfoHeader bitmapCreateBitmapInfoHeader(unsigned long width, unsigned long height)
 {

@@ -6,10 +6,27 @@ But : Dessin de courbes
 */
 
 // En-tetes et inclure
+#include "typedef.h"
+
+#include "bitmapCreateData.h"
+#include "bitmapFreeData.h"
+
+#include "drawAxe.h"
+#include "drawGrid.h"
+#include "drawMargin.h"
+#include "drawPoint.h"
+
+#include "writeLabels.h"
+#include "writeTitle.h"
+
+#include "fileWrite.h"
+
+#include "errorThrow.h"
+#include "errrorInputCheck.h"
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
-#include "headers.h"
 #include <string.h>
 // Programme principal
 int main(){
@@ -81,9 +98,9 @@ int main(){
 
 	for (double i = minX; i <= maxX; i += stepPrecision)
 	{
-		int y = i*sin(i);
+		double y = i*sin(i);
 
-		drawPoint(i, i*sin(i), minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
+		drawPoint(i, y, minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
 	}
 
 	writeTitle(width, height, margin, title, strlen(title), data);

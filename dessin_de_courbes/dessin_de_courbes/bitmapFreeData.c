@@ -13,9 +13,12 @@ bitmapFreeData(sRGB **data);
 /!\	-	La gestion dynamique de tableau NECESSITE de libérer la mémoire une fois utilisée
 */
 
+#ifndef TYPEDEF_H
+#include "typedef.h"
+#endif
+
 #include <stdlib.h>
 #include <stdio.h>
-#include "typedef.h"
 
 
 void bitmapFreeData(sRGB **Data){

@@ -1,5 +1,11 @@
-#include "headers.h"
+
+
+#ifndef TYPEDEF_H
+#include "typedef.h"
+#endif
+#ifndef CHARACTER_H
 #include "character.xbm"
+#endif
 
 void drawChar(unsigned long x_origin_coordinate, unsigned long y_origin_coordinate, sRGB ** data, char character)
 {

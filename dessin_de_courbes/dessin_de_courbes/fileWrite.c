@@ -5,7 +5,15 @@
 //
 #define _CRT_SECURE_NO_WARNINGS 1
 
-#include "headers.h"
+
+#ifndef BITMAPCREATEBITMAPEINFOHEADER_H
+#include "bitmapCreateBitmapInfoHeader.h"
+#endif
+
+#ifndef BITMAPCREATEFILEINFOHEADER_H
+#include "bitmapCreateFileInfoHeader.h"
+#endif
+
 #include <stdio.h>
 
 #define PATH "test.bmp"

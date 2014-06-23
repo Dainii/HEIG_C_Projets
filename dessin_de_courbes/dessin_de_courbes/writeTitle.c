@@ -1,6 +1,13 @@
-#include "headers.h"
+#ifndef TYPEDEF_H
+#include "typedef.h"
+#endif
+#ifndef CHARACTER_H
 #include "character.xbm"
+#endif
 
+#ifndef DRAWSTRING_H
+#include "drawString.h"
+#endif
 void writeTitle(unsigned long width, unsigned long height, unsigned long margin, char * title, char sizeOfTitle, sRGB ** data)
 {
 	unsigned int x_middle = width / 2;

@@ -64,13 +64,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="headers.h" />
+    <ClInclude Include="bitmapCreateBitmapInfoHeader.h" />
+    <ClInclude Include="bitmapCreateData.h" />
+    <ClInclude Include="bitmapCreateFileInfoHeader.h" />
+    <ClInclude Include="bitmapFreeData.h" />
+    <ClInclude Include="drawAxe.h" />
+    <ClInclude Include="drawChar.h" />
+    <ClInclude Include="drawGrid.h" />
+    <ClInclude Include="drawHorizontalLine.h" />
+    <ClInclude Include="drawMargin.h" />
+    <ClInclude Include="drawPoint.h" />
+    <ClInclude Include="drawString.h" />
+    <ClInclude Include="drawVerticalLine.h" />
+    <ClInclude Include="errorThrow.h" />
+    <ClInclude Include="errrorInputCheck.h" />
+    <ClInclude Include="fileWrite.h" />
     <ClInclude Include="typedef.h" />
+    <ClInclude Include="writeLabels.h" />
+    <ClInclude Include="writeTitle.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bitmapCreateData.c" />
     <ClCompile Include="bitmapFreeData.c" />
-    <ClCompile Include="createBitmapCanvas.c" />
     <ClCompile Include="bitmapCreateFileInfoHeader.c" />
     <ClCompile Include="bitmapCreateBitmapInfoHeader.c" />
     <ClCompile Include="drawAxe.c" />
