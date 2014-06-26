@@ -1,2 +1,2 @@
 #define ERRORINPUTCHECK_H
-int errorInputCheck(double minX, double maxX, double stepX, double alternateStepX, double minY, double maxY, double stepY, double alternateStepY, unsigned long width, unsigned long height, unsigned int margin);
+int errorInputCheck(double minX, double maxX, double stepLabelX, double alternateStepLabelX, double minY, double maxY, double stepLabelY, double alternateStepLabelY, unsigned long width, unsigned long height, unsigned int margin);

@@ -1,8 +1,8 @@
 
 
-int errorInputCheck(double minX, double maxX, double stepX, double alternateStepX, double minY, double maxY, double stepY, double alternateStepY, unsigned long width, unsigned long height, unsigned int margin)
+int errorInputCheck(double minX, double maxX, double stepLabelX, double alternateStepLabelX, double minY, double maxY, double stepLabelY, double alternateStepLabelY, unsigned long width, unsigned long height, unsigned int margin)
 {
-	if (stepX <= 0 || stepY <= 0 || alternateStepX <= 0 || alternateStepY <= 0 )
+	if (stepLabelX <= 0 || stepLabelY <= 0 || alternateStepLabelX <= 0 || alternateStepLabelY <= 0)
 	{
 		return 1001;
 	}

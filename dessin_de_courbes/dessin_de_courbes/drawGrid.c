@@ -30,8 +30,8 @@ void drawGrid(double minX, double maxX, double stepX, double minY, double maxY, 
 	int yorigin = (int)floor((fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin)));
 
 	//	Find number of grade to draw
-	unsigned long numberOfYGrade = (unsigned long)round((fabs(minY) + fabs(maxY)) / stepX);
-	unsigned long numberOfXGrade = (unsigned long)round((fabs(minX) + fabs(maxX)) / stepY);
+	unsigned long numberOfYGrade = (unsigned long)round((fabs(minY) + fabs(maxY)) / stepY);
+	unsigned long numberOfXGrade = (unsigned long)round((fabs(minX) + fabs(maxX)) / stepX);
 
 	//	Find size in pixel between graduation
 	double xStepInPixel = ((width - (2 * margin)) / (fabs(minX) + fabs(maxX)));

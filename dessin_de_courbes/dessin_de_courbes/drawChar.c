@@ -14,21 +14,21 @@ void drawChar(unsigned long x_origin_coordinate, unsigned long y_origin_coordina
 	//	Coded like this:
 	/*
 	   8px
-	   00000000
-	   00000000
-	   00000000
-	   00000000
-	   00000000
-	   00000000
-	   00000000
-	   00000000 15 px
-	   00000000
-	   00000000
-	   00000000
-	   00000000
-	   00000000
-	   00000000
-	   00000000
+	   00000000 -
+	   00000000 -
+	   10000000
+	   11000000
+	   01100000
+	   00110000
+	   00110000
+	   00110000 15 px
+	   00110000
+	   01100000
+	   11000000
+	   10000000
+	   00000000 -
+	   00000000 -
+	   00000000 -
 
 	   0 = no pixel
 	   1 = pixel
@@ -494,6 +494,20 @@ void drawChar(unsigned long x_origin_coordinate, unsigned long y_origin_coordina
 		for (int y = 0; y < CHAR_HEIGHT; y++)
 		{
 			table[y] = MINUS_bits[y];
+		}
+		break;
+
+	case ')':
+		for (int y = 0; y < CHAR_HEIGHT; y++)
+		{
+			table[y] = LEFT_P_bits[y];
+		}
+		break;
+
+	case '(':
+		for (int y = 0; y < CHAR_HEIGHT; y++)
+		{
+			table[y] = RIGHT_P_bits[y];
 		}
 		break;
 

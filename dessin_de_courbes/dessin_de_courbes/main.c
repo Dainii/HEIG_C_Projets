@@ -58,14 +58,14 @@ int main(){
 	double stepLabelY = config.stepLabelY;
 
 	//	Define Alternate graduation precision for the drawGrid function only
-	double alternateStepLabelX = config.stepLabelX * 0.25;
-	double alternateStepLabelY = config.stepLabelY * 0.25;
+	double alternateStepLabelX = config.stepLabelX / 4;
+	double alternateStepLabelY = config.stepLabelY / 4;
 
 	//	Define Margin
 	unsigned long margin = 100;
 
 	//	Define precision
-	double stepX = 0.000000000;
+	double stepX = 0.0001;
 	stepX = config.stepX;
 
 	//	Define Graphics title
