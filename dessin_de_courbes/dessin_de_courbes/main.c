@@ -65,7 +65,8 @@ int main(){
 	unsigned long margin = 100;
 
 	//	Define precision
-	double stepPrecision = 0.0001;
+	double stepX = 0.000000000;
+	stepX = config.stepX;
 
 	//	Define Graphics title
 	char title[50];
@@ -110,7 +111,7 @@ int main(){
 	drawAxe(minX, maxX, stepLabelX, minY, maxY, stepLabelY, data, width, height, margin);
 
 
-	for (double i = minX; i <= maxX; i += stepPrecision)
+	for (double i = minX; i <= maxX; i += stepX)
 	{
 		double y = i*sin(i);
 

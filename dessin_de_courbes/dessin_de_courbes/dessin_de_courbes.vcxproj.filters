@@ -90,11 +90,11 @@
     <ClInclude Include="bitmapCreateData.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="readConfig.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
-      <Filter>Fichiers de ressources</Filter>
-    </ClCompile>
     <ClCompile Include="bitmapCreateBitmapInfoHeader.c">
       <Filter>Fichiers de ressources\bitmap\create</Filter>
     </ClCompile>
@@ -145,6 +145,12 @@
     </ClCompile>
     <ClCompile Include="drawString.c">
       <Filter>Fichiers de ressources\draw</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="readConfig.c">
+      <Filter>Fichiers de ressources\file</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
