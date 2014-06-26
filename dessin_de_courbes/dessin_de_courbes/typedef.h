@@ -49,8 +49,8 @@ typedef struct
 typedef struct
 {
 	char title[100];
-	char xLabel[100];
-	char yLabel[100];
+	char xLabel[10];
+	char yLabel[10];
 	double ymin;
 	double ymax;
 	double xmax;

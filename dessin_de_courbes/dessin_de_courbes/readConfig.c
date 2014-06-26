@@ -32,7 +32,7 @@ sConfig readConfig(){
 	if (file == 0)
 	{
 		//fopen returns 0, the NULL pointer, on failure
-		perror("Canot open input file\n");
+		perror("Cannot open input file\n");
 		exit(-1);
 	}
 	else
@@ -51,11 +51,11 @@ sConfig readConfig(){
 			switch (step){
 			case 1:
 				// Si la ligne commence par un #, il l'ignore
-				if (c == "#"){
+				if (c == '#'){
 					step = 2;
 				}
 				else{
-					if (c != "="){
+					if (c != '='){
 						key[refKey] = c;
 						refKey++;
 					}
@@ -64,65 +64,70 @@ sConfig readConfig(){
 				break;
 			case 2:
 				// tant qu'il ne détecte pas la fin de la ligne, ne fait rien
-				if (c == "\n")
+				if (c == '\n')
 					step = 1;
 				break;
 			case 3:
 				// Si ce n'est pas un "="
-				if (c != "="){
+				if (c != '='){
 					key[refKey] = c;
 					refKey++;
 				}
 				else {
 					// termine la chaine
-					key[refKey] = "\0";
+					key[refKey] = '\0';
 
 					step = 4;
 				}
 				break;
 			case 4:
 				// Tant que le caractère n'est pas un retour à la ligne, lis la valeur
-				if (c != "\n"){
+				if (c != '\n'){
 					value[refValue] = c;
 					refValue++;
 				}
 				else {
 					// termine la chaine 
-					value[refValue] = "\0";
+					/*value[refValue] = '\n';
+					value[refValue+1] = '\0';*/
+					value[refValue] = '\0';
 
 					char *ptr;
 
 					// compare la clé avec les différentes parties de la config
 					// Compare avec les différents paramètres
-					if (strcmp(key, "XMIN")){
+					if (!strcmp(key, "XMIN")){
 						config.xmin = strtod(value, &ptr);
 					}
-					else if (strcmp(key, "XMAX")){
+					else if (!strcmp(key, "XMAX")){
 						config.xmax = strtod(value, &ptr);
 					}
-					else if (strcmp(key, "YMIN")){
+					else if (!strcmp(key, "YMIN")){
 						config.ymin = strtod(value, &ptr);
 					}
-					else if (strcmp(key, "YMAX")){
+					else if (!strcmp(key, "YMAX")){
 						config.ymax = strtod(value, &ptr);
 					}
-					else if (strcmp(key, "STEPX")){
+					else if (!strcmp(key, "STEPX")){
 						config.stepX = strtod(value, &ptr);
 					}
-					else if (strcmp(key, "STEPLABELX")){
+					else if (!strcmp(key, "STEPLABELX")){
 						config.stepLabelX = strtod(value, &ptr);
 					}
-					else if (strcmp(key, "STEPLABELY")){
+					else if (!strcmp(key, "STEPLABELY")){
 						config.stepLabelY = strtod(value, &ptr);
 					}
-					else if (strcmp(key, "XLABEL")){
+					else if (!strcmp(key, "XLABEL")){
 						strncpy(config.xLabel, value, refValue + 1);
 					}
-					else if (strcmp(key, "YLABEL")){
+					else if (!strcmp(key, "YLABEL")){
 						strncpy(config.yLabel, value, refValue + 1);
 					}
-					else if (strcmp(key, "TITLE")){
+					else if (!strcmp(key, "TITLE")){
 						strncpy(config.title, value, refValue + 1);
+					}
+					else
+					{
 					}
 
 					// Vide les tableaux et réinitialise les varaibels

@@ -5,6 +5,8 @@ Titre : Travail Personnel
 But : Dessin de courbes
 */
 
+#define _CRT_SECURE_NO_WARNINGS
+
 // En-tetes et inclure
 #include "typedef.h"
 
@@ -52,12 +54,12 @@ int main(){
 	double maxY = config.ymax;
 
 	//	Define graduation precision for the drawAxe function only
-	double stepX = config.stepX;
-	double stepY = 1.;
+	double stepLabelX = config.stepLabelX;
+	double stepLabelY = config.stepLabelY;
 
 	//	Define Alternate graduation precision for the drawGrid function only
-	double gridStepX = config.stepLabelX;
-	double gridStepY = config.stepLabelY;
+	double alternateStepLabelX = config.stepLabelX * 0.25;
+	double alternateStepLabelY = config.stepLabelY * 0.25;
 
 	//	Define Margin
 	unsigned long margin = 100;
@@ -66,18 +68,21 @@ int main(){
 	double stepPrecision = 0.0001;
 
 	//	Define Graphics title
-	char title[50] = config.title;
+	char title[50];
+	strncpy(title, config.title, 50);
 
 	//	Define x - y Label
-	char x_label[10] = config.xLabel;
-	char y_label[10] = config.yLabel;
+	char x_label[10];
+	char y_label[10];
+	strncpy(x_label, config.xLabel, 10);
+	strncpy(y_label, config.yLabel, 10);
 
 	//	DATA INPUT
 
 
 
 	//	CHECK INPUT
-	int errorNbr = errorInputCheck(minX, maxX, stepX, gridStepX, minY, maxY, gridStepY, width, height, margin);
+	int errorNbr = errorInputCheck(minX, maxX, stepLabelX, alternateStepLabelX, minY, maxY, stepLabelY,alternateStepLabelY, width, height, margin);
 	if (errorNbr != 0)
 	{
 		errorThrow(errorNbr);
@@ -101,15 +106,15 @@ int main(){
 	}
 
 	drawMargin(margin, data, width, height);
-	drawGrid(minX, maxX, gridStepX, minY, maxY, gridStepY, data, width, height, margin);
-	drawAxe(minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
+	drawGrid(minX, maxX, alternateStepLabelX, minY, maxY, alternateStepLabelY, data, width, height, margin);
+	drawAxe(minX, maxX, stepLabelX, minY, maxY, stepLabelY, data, width, height, margin);
 
 
 	for (double i = minX; i <= maxX; i += stepPrecision)
 	{
 		double y = i*sin(i);
 
-		drawPoint(i, y, minX, maxX, stepX, minY, maxY, stepY, data, width, height, margin);
+		drawPoint(i, y, minX, maxX, stepLabelX, minY, maxY, stepLabelY, data, width, height, margin);
 	}
 
 	writeTitle(width, height, margin, title, strlen(title), data);
