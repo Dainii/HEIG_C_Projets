@@ -79,6 +79,7 @@
     <ClInclude Include="errorThrow.h" />
     <ClInclude Include="errrorInputCheck.h" />
     <ClInclude Include="fileWrite.h" />
+    <ClInclude Include="readConfig.h" />
     <ClInclude Include="typedef.h" />
     <ClInclude Include="writeLabels.h" />
     <ClInclude Include="writeTitle.h" />
@@ -100,6 +101,7 @@
     <ClCompile Include="errrorInputCheck.c" />
     <ClCompile Include="fileWrite.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="readConfig.c" />
     <ClCompile Include="writeLabels.c" />
     <ClCompile Include="writeTitle.c" />
   </ItemGroup>
