@@ -24,6 +24,8 @@ But : Dessin de courbes
 #include "errorThrow.h"
 #include "errrorInputCheck.h"
 
+#include "readConfig.h"
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -37,19 +39,25 @@ int main(){
 	unsigned long width = 1280;
 	unsigned long height = 720;
 
+	// crée la structure de config
+	sConfig config;
+
+	// Remplis la config
+	config = readConfig();
+
 	//	Define minimum and maximum Value
-	double minX = -2;
-	double maxX = 10;
-	double minY = -10;
-	double maxY = +20;
+	double minX = config.xmin;
+	double maxX = config.xmax;
+	double minY = config.ymin;
+	double maxY = config.ymax;
 
 	//	Define graduation precision for the drawAxe function only
-	double stepX = 2;
-	double stepY = 2;
+	double stepX = config.stepX;
+	double stepY = 1.;
 
 	//	Define Alternate graduation precision for the drawGrid function only
-	double gridStepX = 0.5;
-	double gridStepY = 0.5;
+	double gridStepX = config.stepLabelX;
+	double gridStepY = config.stepLabelY;
 
 	//	Define Margin
 	unsigned long margin = 100;
@@ -58,17 +66,18 @@ int main(){
 	double stepPrecision = 0.0001;
 
 	//	Define Graphics title
-	char title[50] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char title[50] = config.title;
 
 	//	Define x - y Label
-	char x_label[10] = "poney x";
-	char y_label[10] = "poney y";
+	char x_label[10] = config.xLabel;
+	char y_label[10] = config.yLabel;
 
 	//	DATA INPUT
 
 
+
 	//	CHECK INPUT
-	int errorNbr = errorInputCheck(minX, maxX, stepX, gridStepX, minY, maxY, stepY, gridStepY, width, height, margin);
+	int errorNbr = errorInputCheck(minX, maxX, stepX, gridStepX, minY, maxY, gridStepY, width, height, margin);
 	if (errorNbr != 0)
 	{
 		errorThrow(errorNbr);

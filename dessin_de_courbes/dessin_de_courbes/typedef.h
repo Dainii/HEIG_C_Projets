@@ -46,6 +46,20 @@ typedef struct
 	unsigned long bmpImportantColor;
 } sBitmapInfoHeader;
 
+typedef struct
+{
+	char title[100];
+	char xLabel[100];
+	char yLabel[100];
+	double ymin;
+	double ymax;
+	double xmax;
+	double xmin;
+	double stepX;
+	double stepLabelX;
+	double stepLabelY;
+} sConfig;
+
 #pragma pack(pop)
 
 
