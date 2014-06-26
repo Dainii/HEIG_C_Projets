@@ -39,8 +39,8 @@ sConfig readConfig(){
 	{
 		// Déclare les variables nécessaire
 
-		char key[10];
-		char value[10];
+		char key[20];
+		char value[20];
 		int refKey = 0;
 		int refValue = 0;
 		short step = 1;
