@@ -1189,6 +1189,8 @@ int main(){
 
 	//	CHECK des données introduites
 	int errorNbr = errorInputCheck(minX, maxX, stepLabelX, alternateStepLabelX, minY, maxY, stepLabelY,alternateStepLabelY, width, height, margin);
+
+	//	En cas d'erreur, stop le programme en retournant un message et un code d'erreur
 	if (errorNbr != 0)
 	{
 		errorThrow(errorNbr);
