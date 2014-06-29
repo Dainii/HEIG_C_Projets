@@ -586,11 +586,11 @@ void drawChar(unsigned long x_origin_coordinate, unsigned long y_origin_coordina
 		}
 		break;
 
-		//	If unrecognized character, then write a square
+		//	Si aucun caractère n'a été reconnu, alors on écrit un espace
 	default:
 		for (int i = 0; i < CHAR_HEIGHT; i++)
 		{
-			table[i] = 0xFF;
+			table[i] = 0x00;
 		}
 		break;
 	};
