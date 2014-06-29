@@ -89,7 +89,7 @@ sBitmapInfoHeader bitmapCreateBitmapInfoHeader(unsigned long width, unsigned lon
 	//	Calculate size image in byte and define in header
 	bih.bmpSizeImage = ((height * width) * sizeof(sRGB));
 
-	//Resolution
+	// Resolution
 	bih.bmpPixelPerMeterX = 0x00000000;
 	bih.bmpPixelPerMeterY = 0x00000000;
 
@@ -929,8 +929,7 @@ sConfig readConfigFile(){
 	// file est null en cas d'erreur
 	if (file == 0)
 	{
-		//fopen returns 0, the NULL pointer, on failure
-		perror("Cannot open input file\n");
+		perror("Impossible d'ouvrir le fichier de configuration\n");
 		exit(-1);
 	}
 	else
@@ -942,6 +941,24 @@ sConfig readConfigFile(){
 		int refKey = 0;
 		int refValue = 0;
 		short step = 1;
+
+		/*
+		Fonctionnement par étape
+		Etape 1: 
+			Si '#' détecter => va à l'étape 2
+			si '=' détecter => va à l'étape ne fait rien, une ligne ne commence pas par un '=' non mais
+			sinon, commence à enregistrer la clé et => étape 3
+		Etape 2:
+			Ne fait rien tant qu'il ne détecte pas un retour à la ligne.
+			si '\n' alors, retour à l'étape 1
+		Etape 3:
+			Si ce n'est pas un '=' => enregistre la clé dans un tableau
+			si c'est un '=', termine la chaine de la clé par un '\0' et => étape 4
+		Etape 4:
+			si ce n'est pas un '\n', enregistre la valeur dans un tableau
+			si  c'est un '\n', termine la chaine de la valeur avec un '\0' et en fonction de la clé précédement enregistrée, va sauvé la valeur dans la bonne variable.
+			puis => Etape 1
+		*/
 
 		// Parcours toutes les lignes
 		while ((c = fgetc(file)) != EOF)
@@ -986,8 +1003,6 @@ sConfig readConfigFile(){
 				}
 				else {
 					// termine la chaine 
-					/*value[refValue] = '\n';
-					value[refValue+1] = '\0';*/
 					value[refValue] = '\0';
 
 					char *ptr;
