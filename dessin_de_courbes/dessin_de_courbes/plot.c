@@ -1102,7 +1102,7 @@ void writeTitle(unsigned long width, unsigned long height, unsigned long margin,
 }
 
 //	Création de l'image
-createImage(unsigned long width, unsigned long height, long margin, double minX, double maxX, double minY, double maxY, sRGB ** data, double stepLabelX, double alternateStepLabelX, double stepLabelY, double alternateStepLabelY, double stepX, char x_label[10], char y_label[10], char title[50])
+void createImage(unsigned long width, unsigned long height, long margin, double minX, double maxX, double minY, double maxY, sRGB ** data, double stepLabelX, double alternateStepLabelX, double stepLabelY, double alternateStepLabelY, double stepX, char x_label[10], char y_label[10], char title[50])
 {
 	//	Initialisation des DATA en blanc
 	for (unsigned long y = 0; y < height; y++)
