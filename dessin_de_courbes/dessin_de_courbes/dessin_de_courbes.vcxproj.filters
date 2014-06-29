@@ -13,20 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Fichiers de ressources\bitmap">
-      <UniqueIdentifier>{2a9cdab6-26df-4ec9-af5c-56b9b1433e51}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers de ressources\bitmap\create">
-      <UniqueIdentifier>{646aa03e-9802-4cef-8c81-287154014bf0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers de ressources\draw">
-      <UniqueIdentifier>{98741ffa-ac9e-4877-90d4-12ba112d8403}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Fichiers de ressources\txt">
       <UniqueIdentifier>{9e0fbbec-3b38-4739-9c78-470df9bd9119}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers de ressources\bitmap\free">
-      <UniqueIdentifier>{daf0488e-7517-4e68-be82-512617de4e96}</UniqueIdentifier>
     </Filter>
     <Filter Include="Fichiers de ressources\file">
       <UniqueIdentifier>{beb0e0ab-09f3-4070-ad82-72e2e9ddc330}</UniqueIdentifier>
@@ -39,118 +27,10 @@
     <ClInclude Include="typedef.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="drawAxe.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="errrorInputCheck.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="errorThrow.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="fileWrite.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="writeLabels.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="writeTitle.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="drawString.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="drawChar.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="drawGrid.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="drawPoint.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="drawVerticalLine.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="drawHorizontalLine.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="drawMargin.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="bitmapCreateFileInfoHeader.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="bitmapCreateBitmapInfoHeader.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="bitmapFreeData.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="bitmapCreateData.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
-    <ClInclude Include="readConfig.h">
-      <Filter>Fichiers d%27en-tête</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bitmapCreateBitmapInfoHeader.c">
-      <Filter>Fichiers de ressources\bitmap\create</Filter>
-    </ClCompile>
-    <ClCompile Include="bitmapCreateFileInfoHeader.c">
-      <Filter>Fichiers de ressources\bitmap\create</Filter>
-    </ClCompile>
-    <ClCompile Include="bitmapCreateData.c">
-      <Filter>Fichiers de ressources\bitmap\create</Filter>
-    </ClCompile>
-    <ClCompile Include="bitmapFreeData.c">
-      <Filter>Fichiers de ressources\bitmap\free</Filter>
-    </ClCompile>
-    <ClCompile Include="drawMargin.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
-    <ClCompile Include="drawAxe.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
-    <ClCompile Include="fileWrite.c">
-      <Filter>Fichiers de ressources\file</Filter>
-    </ClCompile>
-    <ClCompile Include="drawHorizontalLine.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
-    <ClCompile Include="drawVerticalLine.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
-    <ClCompile Include="drawPoint.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
-    <ClCompile Include="drawGrid.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
-    <ClCompile Include="errorThrow.c">
-      <Filter>Fichiers de ressources\error</Filter>
-    </ClCompile>
-    <ClCompile Include="errrorInputCheck.c">
-      <Filter>Fichiers de ressources\error</Filter>
-    </ClCompile>
-    <ClCompile Include="drawChar.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
-    <ClCompile Include="writeTitle.c">
-      <Filter>Fichiers de ressources\txt</Filter>
-    </ClCompile>
-    <ClCompile Include="writeLabels.c">
-      <Filter>Fichiers de ressources\txt</Filter>
-    </ClCompile>
-    <ClCompile Include="drawString.c">
-      <Filter>Fichiers de ressources\draw</Filter>
-    </ClCompile>
     <ClCompile Include="main.c">
       <Filter>Fichiers sources</Filter>
-    </ClCompile>
-    <ClCompile Include="readConfig.c">
-      <Filter>Fichiers de ressources\file</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
