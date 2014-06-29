@@ -13,14 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Fichiers de ressources\txt">
-      <UniqueIdentifier>{9e0fbbec-3b38-4739-9c78-470df9bd9119}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers de ressources\file">
-      <UniqueIdentifier>{beb0e0ab-09f3-4070-ad82-72e2e9ddc330}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Fichiers de ressources\error">
-      <UniqueIdentifier>{9e6ed3d0-fc4e-499a-8c4f-8347be497eea}</UniqueIdentifier>
+    <Filter Include="Fichiers de ressources\NewFilter1">
+      <UniqueIdentifier>{ddafbec3-1bae-4e1b-a571-715f1e4494d7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,13 +23,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="character.xbm">
       <Filter>Fichiers d%27en-tête</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="plot.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

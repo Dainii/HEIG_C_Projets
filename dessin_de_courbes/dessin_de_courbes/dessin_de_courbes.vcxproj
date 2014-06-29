@@ -67,7 +67,7 @@
     <ClInclude Include="typedef.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c" />
+    <ClCompile Include="plot.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="character.xbm" />
