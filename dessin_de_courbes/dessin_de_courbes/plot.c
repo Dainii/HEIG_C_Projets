@@ -696,7 +696,7 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 			unsigned int y_coordinate = (unsigned long)round(i * yStepInPixel * stepY) + margin;
 			char buffer[10];
 			//	résultat y inversé à cause de la structure du bitmap
-			if (minX + i * stepX > 0)
+			if (minY + i * stepY < 0)
 			{
 				sprintf(buffer, "+%.2lf", -(minY + i * stepY));
 			}
