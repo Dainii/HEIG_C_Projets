@@ -15,8 +15,8 @@ But : Dessin de courbes
 
 //	Zone Define
 #define GRAD_SIZE 10
-#define OUTPUTFILENAME "test.bmp"
-#define CONFIG_FILENAME "config.txt"
+#define OUTPUTFILENAME "./test.bmp"
+#define CONFIG_FILENAME "./config.txt"
 #define IMG_WIDTH 1024
 #define IMG_HEIGHT 768
 #define IMG_MARGIN 100
@@ -635,19 +635,19 @@ void drawHorizontalLine(unsigned long xCoordinate, unsigned long yCoordinate, in
 }
 void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, double stepY, sRGB ** data, unsigned long width, unsigned long height, unsigned int margin)
 {
-	//	Find Origin coordinate
+	//	coordonnée de l'origine
 	int xorigin = (int)floor((fabs(minX) / (fabs(minX) + fabs(maxX))) * (width - (2 * margin)));
 	int yorigin = (int)floor((fabs(minY) / (fabs(minY) + fabs(maxY))) * (height - (2 * margin)));
 
-	//	Find number of grade to draw
+	//	nombre de graduation
 	unsigned long numberOfYGrade = (unsigned long)round((fabs(minY) + fabs(maxY)) / stepY);
 	unsigned long numberOfXGrade = (unsigned long)round((fabs(minX) + fabs(maxX)) / stepX);
 
-	//	Find size in pixel between graduation
+	//	Distance entre chaque graduation
 	double xStepInPixel = ((width - (2 * margin)) / (fabs(minX) + fabs(maxX)));
 	double yStepInPixel = ((height - (2 * margin)) / (fabs(minY) + fabs(maxY)));
 
-	//	Draw Axe
+	//	Dessine les axes
 	for (unsigned long y = 0; y < height; y++)
 	{
 		for (unsigned long x = 0; x < width; x++)
@@ -664,11 +664,11 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 	//	Graduate X
 	for (unsigned int i = 0; i <= numberOfXGrade; i++)
 	{
-		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
+		//	Prévient une imprécision mineurs apparaissant lorsque l'on approche du point d'origine
 		if (i * stepX - fabs(minX) != 0)
 		{
 			//	Write Graduation
-			int x_coordinate = (unsigned long)round(i * xStepInPixel * stepX) + margin;
+			unsigned int x_coordinate = (unsigned long)round(i * xStepInPixel * stepX) + margin;
 			char buffer[10];
 			if (minX + i * stepX > 0)
 			{
@@ -678,8 +678,11 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 			{
 				sprintf(buffer, "%.2lf", minX + i * stepX);
 			}
-			drawString(x_coordinate - (CHAR_WIDTH * strlen(buffer) / 2), yorigin + CHAR_HEIGHT + margin, data, buffer, strlen(buffer), width, height);
-			drawVerticalLine(x_coordinate, yorigin + margin, GRAD_SIZE, data);
+			if (x_coordinate >= margin && x_coordinate <= width - margin)
+			{
+				drawString(x_coordinate - (CHAR_WIDTH * strlen(buffer) / 2), yorigin + CHAR_HEIGHT + margin, data, buffer, strlen(buffer), width, height);
+				drawVerticalLine(x_coordinate, yorigin + margin, GRAD_SIZE, data);
+			}
 		}
 	}
 
@@ -689,14 +692,23 @@ void drawAxe(double minX, double maxX, double stepX, double minY, double maxY, d
 		//	To prevent minor imprecision when approaching origin. It will prevent an additional line to be drawn just after the origin
 		if (i * stepY - fabs(minY) != 0)
 		{
-			//	Write Graduation
-			int y_coordinate = (unsigned long)round(i * yStepInPixel * stepY) + margin;
+			//	graduation
+			unsigned int y_coordinate = (unsigned long)round(i * yStepInPixel * stepY) + margin;
 			char buffer[10];
-
-			//Inwarding result of (minY + i * stepY) because of bitmap structure
-			sprintf(buffer, "%.2lf", -(minY + i * stepY));
-			drawString(xorigin + margin - (strlen(buffer) * CHAR_WIDTH), y_coordinate - CHAR_HEIGHT, data, buffer, strlen(buffer), width, height);
-			drawHorizontalLine(xorigin + margin, y_coordinate, GRAD_SIZE, data);
+			//	résultat y inversé à cause de la structure du bitmap
+			if (minX + i * stepX > 0)
+			{
+				sprintf(buffer, "+%.2lf", -(minY + i * stepY));
+			}
+			else
+			{
+				sprintf(buffer, "%.2lf", -(minY + i * stepY));
+			}
+			if (y_coordinate >= margin && y_coordinate <= height - margin)
+			{
+				drawString(xorigin + margin - (strlen(buffer) * CHAR_WIDTH), y_coordinate - CHAR_HEIGHT, data, buffer, strlen(buffer), width, height);
+				drawHorizontalLine(xorigin + margin, y_coordinate, GRAD_SIZE, data);
+			}
 		}
 	}
 
